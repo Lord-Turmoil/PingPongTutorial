@@ -3,7 +3,7 @@
 
 static Coordinate mouse;
 
-void PeekInputMessage()
+void PeekMouseMessage()
 {
     ExMessage msg;
 

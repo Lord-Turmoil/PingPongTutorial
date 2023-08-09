@@ -15,7 +15,7 @@ int APIENTRY WinMain(
     while (true)
     {
         // process input
-        PeekInputMessage();
+        PeekMouseMessage();
         if (IsKeyDown(VK_Q))
         {
             break;

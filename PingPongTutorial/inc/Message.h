@@ -5,7 +5,7 @@
 
 #include "Defines.h"
 
-void PeekInputMessage();
+void PeekMouseMessage();
 
 bool IsKeyDown(int key);
 Coordinate GetMouseCoordinate();
