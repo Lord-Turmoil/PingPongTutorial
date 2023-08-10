@@ -1,4 +1,6 @@
 #include "../../inc/game/Ball.h"
+#include "../../inc/utils/Random.h"
+#include <cmath>
 
 Ball::Ball(double speed) : _speed(speed)
 {
@@ -6,7 +8,16 @@ Ball::Ball(double speed) : _speed(speed)
 
 void Ball::Serve(double direction)
 {
-    _velocity.x = _speed * direction;
+    double degree = Random(-60, 60);
+    direction = direction / std::abs(direction);
+
+    _velocity.x = _speed * std::cos(degree) * direction;
+    _velocity.y = _speed * std::sin(degree);
+}
+
+void Ball::Stop()
+{
+    _velocity.x = _velocity.y = 0;
 }
 
 void Ball::Move()
@@ -64,4 +75,5 @@ void Ball::Attach(const Rect& rect, bool isLeft)
     {
         _pos.x += rect.width * 0.5;
     }
+    Stop();
 }

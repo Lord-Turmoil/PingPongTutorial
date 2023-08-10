@@ -17,6 +17,7 @@ public:
 
     // direction should be 1 or -1
     void Serve(double direction);
+    void Stop();
     void Move();
 
     void Bounce(const Rect& rect);
