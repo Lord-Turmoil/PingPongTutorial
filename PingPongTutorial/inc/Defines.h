@@ -3,6 +3,8 @@
 #ifndef _DEFINES_H_
 #define _DEFINES_H_
 
+#include <easyx.h>
+
 struct Vector
 {
     double x;
@@ -72,7 +74,9 @@ struct Rect
 
     Rect() : x(0.0), y(0.0), width(0.0), height(0.0) {}
     Rect(double _x, double _y, double _width, double _height)
-        : x(_x), y(_y), width(_width), height(_height) {}
+        : x(_x), y(_y), width(_width), height(_height)
+    {
+    }
 
     Coordinate GetCenter() const
     {
@@ -87,6 +91,11 @@ struct Rect
     bool Contains(const Coordinate& coord) const
     {
         return ((x < coord.x && coord.x < x + width) && (y < coord.y && coord.y < y + height));
+    }
+
+    RECT ToEasyXRect() const
+    {
+        return { (LONG)x, (LONG)y, (LONG)(x + width), (LONG)(y + height) };
     }
 };
 
