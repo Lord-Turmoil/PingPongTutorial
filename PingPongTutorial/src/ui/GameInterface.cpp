@@ -106,7 +106,7 @@ void GameInterface::Draw()
 {
     // table
     setlinestyle(PS_SOLID, 2);
-    setlinecolor(WHITE);
+    setlinecolor(BLACK);
     rectangle(150, 70, 850, 510);
     line(500, 70, 500, 510);
 
@@ -116,7 +116,7 @@ void GameInterface::Draw()
     line(900, 50, 1000, 50);
     LOGFONT style;
     gettextstyle(&style);
-    settextstyle(28, 0, L"Consolas");
+    settextstyle(22, 0, L"Consolas");
     RECT rect0{ 0, 0, 100, 50 };
     RECT rect1{ 900, 0, 1000, 50 };
     drawtext(_controllers[0]->Name().c_str(), &rect0, DT_CENTER | DT_VCENTER | DT_SINGLELINE);

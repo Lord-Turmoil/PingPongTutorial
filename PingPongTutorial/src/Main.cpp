@@ -24,10 +24,6 @@ int APIENTRY WinMain(
 
         // process input
         PeekMouseMessage();
-        if (IsKeyDown(VK_Q))
-        {
-            break;
-        }
 
         // update game
         app->Update();
@@ -45,6 +41,8 @@ int APIENTRY WinMain(
 void Init()
 {
     initgraph(1000, 560);
+    setbkcolor(WHITE);
+    settextcolor(BLACK);
 
     // load image resource
     LoadImageResource(&batImage, L"res/Image.png", 0, 0, 20, 100);

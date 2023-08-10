@@ -1,6 +1,7 @@
 #include "../../inc/game/Ball.h"
 #include "../../inc/utils/Random.h"
 #include "../../inc/Globals.h"
+#include "../../inc/utils/Image.h"
 #include <cmath>
 
 Ball::Ball(double speed) : _speed(speed)
@@ -84,5 +85,5 @@ void Ball::Attach(const Rect& rect, bool isLeft)
 
 void Ball::Draw()
 {
-    putimage((int)_pos.x, (int)_pos.y, &ballImage);
+    PutAlphaImage((int)_pos.x, (int)_pos.y, &ballImage);
 }
