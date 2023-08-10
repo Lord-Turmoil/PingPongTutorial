@@ -77,3 +77,11 @@ void Ball::Attach(const Rect& rect, bool isLeft)
     }
     Stop();
 }
+
+void Ball::Draw()
+{
+    RECT rect = GetBorder().ToEasyXRect();
+
+    setfillcolor(YELLOW);
+    fillrectangle(rect.left, rect.top, rect.right, rect.bottom);
+}
