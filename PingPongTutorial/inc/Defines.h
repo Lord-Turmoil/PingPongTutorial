@@ -85,7 +85,24 @@ struct Rect
 
     Coordinate Intersect(const Rect& rect) const
     {
-        return Coordinate();
+        Coordinate overlap;
+        if (this->x < rect.x)
+        {
+            overlap.x = this->x + this->width - rect.x;
+        }
+        else
+        {
+            overlap.x = rect.x + rect.width - this->x;
+        }
+        if (this->y < rect.y)
+        {
+            overlap.y = this->y + this->height - rect.y;
+        }
+        else
+        {
+            overlap.y = rect.y + rect.height - this->y;
+        }
+        return overlap;
     }
 
     bool Contains(const Coordinate& coord) const

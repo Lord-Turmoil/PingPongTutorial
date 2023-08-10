@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\game\Ball.cpp" />
+    <ClCompile Include="src\game\Bat.cpp" />
+    <ClCompile Include="src\game\GameObject.cpp" />
     <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Message.cpp" />
@@ -29,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Defines.h" />
+    <ClInclude Include="inc\game\Ball.h" />
+    <ClInclude Include="inc\game\Bat.h" />
+    <ClInclude Include="inc\game\GameObject.h" />
     <ClInclude Include="inc\Globals.h" />
     <ClInclude Include="inc\Message.h" />
     <ClInclude Include="inc\ui\Application.h" />
