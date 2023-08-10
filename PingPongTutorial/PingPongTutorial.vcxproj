@@ -32,6 +32,7 @@
     <ClCompile Include="src\ui\Button.cpp" />
     <ClCompile Include="src\ui\GameInterface.cpp" />
     <ClCompile Include="src\ui\MainInterface.cpp" />
+    <ClCompile Include="src\utils\Image.cpp" />
     <ClCompile Include="src\utils\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +45,7 @@
     <ClInclude Include="inc\ui\Application.h" />
     <ClInclude Include="inc\ui\Button.h" />
     <ClInclude Include="inc\ui\Interface.h" />
+    <ClInclude Include="inc\utils\Image.h" />
     <ClInclude Include="inc\utils\Random.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
