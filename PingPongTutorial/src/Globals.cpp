@@ -12,3 +12,7 @@ Application* GetApplication()
 bool isRunning = true;
 
 int gameMode = 0;
+
+// image resource
+IMAGE batImage;
+IMAGE ballImage;

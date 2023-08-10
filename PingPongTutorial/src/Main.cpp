@@ -3,8 +3,10 @@
 #include "../inc/Message.h"
 #include "../inc/Globals.h"
 #include "../inc/ui/Application.h"
+#include "../inc/utils/Image.h"
 
 void Init();
+void ClearUp();
 
 int APIENTRY WinMain(
     _In_ HINSTANCE hInstance,
@@ -14,8 +16,6 @@ int APIENTRY WinMain(
 {
     // initialization
     Init();
-    initgraph(1000, 560);
-    BeginBatchDraw();
 
     Application* app = GetApplication();
     while (isRunning)
@@ -38,15 +38,28 @@ int APIENTRY WinMain(
 
         Sleep(15);
     }
-
-    EndBatchDraw();
-    closegraph();
+    
     return 0;
 }
 
 void Init()
 {
+    initgraph(1000, 560);
+
+    // load image resource
+    LoadImageResource(&batImage, L"res/Image.png", 0, 0, 20, 100);
+    LoadImageResource(&ballImage, L"res/Image.png", 20, 0, 10, 10);
+
+    // init application
     Application* app = GetApplication();
     app->RegisterInterface(new MainInterface())
         ->RegisterInterface(new GameInterface());
+
+    BeginBatchDraw();
+}
+
+void ClearUp()
+{
+    EndBatchDraw();
+    closegraph();
 }

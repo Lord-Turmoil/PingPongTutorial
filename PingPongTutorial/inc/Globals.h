@@ -2,6 +2,7 @@
 
 #ifndef _GLOBALS_H_
 #define _GLOBALS_H_
+#include <easyx.h>
 
 class Application;
 Application* GetApplication();
@@ -12,5 +13,9 @@ const int SINGLE_PLAYER = 0;
 const int DOUBLE_PLAYER = 1;
 
 extern int gameMode;
+
+// image resource
+extern IMAGE batImage;
+extern IMAGE ballImage;
 
 #endif
