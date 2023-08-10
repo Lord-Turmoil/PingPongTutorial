@@ -10,11 +10,12 @@ Ball::Ball(double speed) : _speed(speed)
 
 void Ball::Serve(double direction)
 {
-    double degree = Random(-60, 60);
+    const double PI = 3.1415926;
+    double radian = Random(-60, 60) * PI / 180.0;
     direction = direction / std::abs(direction);
 
-    _velocity.x = _speed * std::cos(degree) * direction;
-    _velocity.y = _speed * std::sin(degree);
+    _velocity.x = _speed * std::cos(radian) * direction;
+    _velocity.y = _speed * std::sin(radian);
 }
 
 void Ball::Stop()
