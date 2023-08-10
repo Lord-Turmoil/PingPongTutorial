@@ -99,6 +99,7 @@ void GameInterface::Update()
     {
         _turn = Random(0, 2);
         _started = false;
+        PlayFmodSound(&scoreSound);
     }
 }
 

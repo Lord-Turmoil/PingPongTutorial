@@ -65,6 +65,8 @@ void Ball::Bounce(const Rect& rect)
     }
 
     _pos = _pos + overlap;
+
+    PlayFmodSound(&bounceSound);
 }
 
 void Ball::Attach(const Rect& rect, bool isLeft)

@@ -16,3 +16,7 @@ int gameMode = 0;
 // image resource
 IMAGE batImage;
 IMAGE ballImage;
+
+// sound resource
+FmodSound bounceSound;
+FmodSound scoreSound;
