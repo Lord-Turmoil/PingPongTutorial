@@ -17,13 +17,14 @@ void AiBatController::Update()
     Coordinate batCenter = _bat->GetBorder().GetCenter();
     Coordinate ballCenter = _ball->GetBorder().GetCenter();
 
-    if (ballCenter.y < batCenter.y)
-    {
-        _bat->MoveUp(_speed);
-    }
-    else if (ballCenter.y > batCenter.y)
+    double delta = ballCenter.y - batCenter.y;
+    if (delta > 5.0)
     {
         _bat->MoveDown(_speed);
+    }
+    else if (delta < -5.0)
+    {
+        _bat->MoveUp(_speed);
     }
 }
 
