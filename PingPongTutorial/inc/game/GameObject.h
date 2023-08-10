@@ -22,6 +22,12 @@ public:
     GameObject* SetWidth(double width);
     GameObject* SetHeight(double height);
 
+    Coordinate GetCoordinate() const;
+    double GetX() const;
+    double GetY() const;
+    double GetWidth() const;
+    double GetHeight() const;
+
     Rect GetBorder() const;
     virtual void Draw() = 0;
 };

@@ -4,7 +4,7 @@
 #define _INTERFACE_H_
 
 #include <string>
-
+#include <memory>
 #include "Button.h"
 
 class Interface
@@ -46,9 +46,22 @@ private:
     static void _OnClickExitButton();
 };
 
+
+class Bat;
+class BatController;
+class Ball;
+
 class GameInterface : public Interface
 {
 private:
+    std::shared_ptr<Bat> _bats[2];
+    std::shared_ptr <BatController> _controllers[2];
+    std::shared_ptr<Ball> _ball;
+
+    int _scores[2];
+
+    int _turn;
+    bool _started;
 
 public:
     GameInterface();

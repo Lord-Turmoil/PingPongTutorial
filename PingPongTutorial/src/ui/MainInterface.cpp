@@ -49,12 +49,14 @@ void MainInterface::Draw()
 
 void MainInterface::_OnClickOnePlayerButton()
 {
+    gameMode = SINGLE_PLAYER;
     Application* app = GetApplication();
     app->ChangeInterface(L"Game");
 }
 
 void MainInterface::_OnClickTwoPlayerButton()
 {
+    gameMode = DOUBLE_PLAYER;
     Application* app = GetApplication();
     app->ChangeInterface(L"Game");
 }

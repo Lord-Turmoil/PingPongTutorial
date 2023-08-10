@@ -3,6 +3,8 @@
 Bat::Bat(double minY, double maxY)
     : _minY(minY), _maxY(maxY)
 {
+    _width = 20;
+    _height = 100;
 }
 
 void Bat::MoveUp(double deltaY)
@@ -34,5 +36,5 @@ void Bat::Draw()
     RECT rect = GetBorder().ToEasyXRect();
 
     setfillcolor(WHITE);
-    fillrectangle(rect.left, rect.top, rect.right, rect.bottom);
+    solidrectangle(rect.left, rect.top, rect.right, rect.bottom);
 }

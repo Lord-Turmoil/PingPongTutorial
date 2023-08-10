@@ -10,4 +10,7 @@ double Random();
 double Random(double upper);
 double Random(double lower, double upper);
 
+int Random(int upper);
+int Random(int lower, int upper);
+
 #endif

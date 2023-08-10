@@ -23,3 +23,19 @@ double Random(double lower, double upper)
 {
     return lower + (upper - lower) * Random();
 }
+
+// [0, upper)
+int Random(int upper)
+{
+    return rand() % upper;
+}
+
+// [lower, upper)
+int Random(int lower, int upper)
+{
+    if (upper <= lower)
+    {
+        return lower;
+    }
+    return lower + rand() % (upper - lower);
+}

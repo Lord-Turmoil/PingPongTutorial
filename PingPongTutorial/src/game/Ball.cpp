@@ -4,6 +4,8 @@
 
 Ball::Ball(double speed) : _speed(speed)
 {
+    _width = 10;
+    _height = 10;
 }
 
 void Ball::Serve(double direction)
@@ -83,5 +85,5 @@ void Ball::Draw()
     RECT rect = GetBorder().ToEasyXRect();
 
     setfillcolor(YELLOW);
-    fillrectangle(rect.left, rect.top, rect.right, rect.bottom);
+    solidrectangle(rect.left, rect.top, rect.right, rect.bottom);
 }
