@@ -5,10 +5,28 @@
 
 #include "Defines.h"
 
+struct MouseMessage
+{
+    union
+    {
+        Coordinate pos;
+        struct
+        {
+            double x;
+            double y;
+        };
+    };
+
+    bool isDown;
+    bool isUp;
+
+    MouseMessage() {}
+};
+
 void PeekMouseMessage();
 
 bool IsKeyDown(int key);
-Coordinate GetMouseCoordinate();
+MouseMessage* GetMouseMessage();
 
 // extended virtual key scan code
 #define VK_A	0x41

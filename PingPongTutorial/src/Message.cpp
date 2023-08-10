@@ -1,16 +1,31 @@
 #include <easyx.h>
 #include "../inc/Message.h"
 
-static Coordinate mouse;
+static MouseMessage mouse;
 
 void PeekMouseMessage()
 {
     ExMessage msg;
 
+    mouse.isUp = false;
+    mouse.isDown = false;
     while (peekmessage(&msg, EX_MOUSE))
     {
-        mouse.x = msg.x;
-        mouse.y = msg.y;
+        if (msg.message == WM_MOUSEMOVE)
+        {
+            mouse.x = msg.x;
+            mouse.y = msg.y;
+        }
+        else if (msg.message == WM_LBUTTONUP)
+        {
+            mouse.isUp = true;
+            mouse.isDown = false;
+        }
+        else if (msg.message == WM_LBUTTONDOWN)
+        {
+            mouse.isUp = false;
+            mouse.isDown = true;
+        }
     }
 }
 
@@ -19,7 +34,7 @@ bool IsKeyDown(int key)
     return GetAsyncKeyState(key);
 }
 
-Coordinate GetMouseCoordinate()
+MouseMessage* GetMouseMessage()
 {
-    return mouse;
+    return &mouse;
 }
