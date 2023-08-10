@@ -1,12 +1,10 @@
 #include <Windows.h>
 #include <easyx.h>
 #include "../inc/Message.h"
-#include "../inc/ui/Button.h"
+#include "../inc/Globals.h"
+#include "../inc/ui/Application.h"
 
-void OnClickButton()
-{
-    circle(300, 300, 50);
-}
+void Init();
 
 int APIENTRY WinMain(
     _In_ HINSTANCE hInstance,
@@ -14,14 +12,12 @@ int APIENTRY WinMain(
     _In_ LPSTR lpCmdLine,
     _In_ int nShowCmd)
 {
-    initgraph(640, 480);
+    // initialization
+    Init();
+    initgraph(1000, 560);
     BeginBatchDraw();
 
-    Button button(Rect(50, 50, 200, 100), L"Click me");
-    button.SetUpStyle(RED)->SetHoverStyle(YELLOW)->SetDownStyle(MAGENTA);
-    button.SetOnClick(OnClickButton);
-
-    MouseMessage* mouse;
+    Application* app = GetApplication();
     while (true)
     {
         cleardevice();
@@ -32,15 +28,12 @@ int APIENTRY WinMain(
         {
             break;
         }
-        mouse = GetMouseMessage();
 
         // update game
-        button.Update();
+        app->Update();
 
-        // draw image
-        button.Draw();
-        circle((int)mouse->x, (int)mouse->y, 10);
-
+        // draw
+        app->Draw();
         FlushBatchDraw();
 
         Sleep(15);
@@ -49,4 +42,11 @@ int APIENTRY WinMain(
     EndBatchDraw();
     closegraph();
     return 0;
+}
+
+void Init()
+{
+    Application* app = GetApplication();
+    app->RegisterInterface(new MainInterface())
+        ->RegisterInterface(new GameInterface());
 }
