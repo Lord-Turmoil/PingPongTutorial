@@ -6,4 +6,6 @@
 class Application;
 Application* GetApplication();
 
+extern bool isRunning;
+
 #endif

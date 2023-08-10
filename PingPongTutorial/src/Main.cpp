@@ -18,7 +18,7 @@ int APIENTRY WinMain(
     BeginBatchDraw();
 
     Application* app = GetApplication();
-    while (true)
+    while (isRunning)
     {
         cleardevice();
 

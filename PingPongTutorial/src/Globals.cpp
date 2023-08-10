@@ -8,3 +8,5 @@ Application* GetApplication()
 {
     return &application;
 }
+
+bool isRunning = true;
