@@ -19,9 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="inc\game\BatController.h" />
+    <ClCompile Include="src\game\AiBatController.cpp" />
     <ClCompile Include="src\game\Ball.cpp" />
     <ClCompile Include="src\game\Bat.cpp" />
     <ClCompile Include="src\game\GameObject.cpp" />
+    <ClCompile Include="src\game\PlayerBatController.cpp" />
     <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Message.cpp" />
