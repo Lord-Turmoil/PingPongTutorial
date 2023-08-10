@@ -76,11 +76,11 @@ void Ball::Attach(const Rect& rect, bool isLeft)
     _pos.y -= _height * 0.5;
     if (isLeft)
     {
-        _pos.x -= rect.width * 0.5 + _width;
+        _pos.x -= rect.width * 0.5 + _width + 1.0;
     }
     else
     {
-        _pos.x += rect.width * 0.5;
+        _pos.x += rect.width * 0.5 + 1.0;
     }
     Stop();
 }

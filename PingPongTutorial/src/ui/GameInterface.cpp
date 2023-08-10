@@ -90,7 +90,7 @@ void GameInterface::Update()
         _ball->Attach(_bats[_turn]->GetBorder(), _turn);
         if (IsKeyDown(VK_SPACE))
         {
-            _ball->Serve(_turn ? 1.0 : -1.0);
+            _ball->Serve(!_turn ? 1.0 : -1.0);
             _started = true;
         }
     }
