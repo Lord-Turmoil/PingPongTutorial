@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 #include "../../inc/ui/Application.h"
+#include "../../inc/ui/Interface.h"
 
 Application::Application()
     : _currentInterface(nullptr), _nextInterface(nullptr)

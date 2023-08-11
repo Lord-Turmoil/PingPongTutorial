@@ -6,6 +6,7 @@
 #include "../inc/Message.h"
 #include "../inc/Globals.h"
 #include "../inc/ui/Application.h"
+#include "../inc/ui/Interface.h"
 #include "../inc/utils/Image.h"
 #include "../inc/Sound.h"
 
