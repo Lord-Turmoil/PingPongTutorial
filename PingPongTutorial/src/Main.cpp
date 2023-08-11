@@ -1,3 +1,6 @@
+// Copyright (C) 2018 - 2023 Tony's Studio. All rights reserved.
+// Licensed under the MIT License.
+
 #include <Windows.h>
 #include <easyx.h>
 #include "../inc/Message.h"
