@@ -34,7 +34,7 @@ void PeekMouseMessage()
 
 bool IsKeyDown(int key)
 {
-    return GetAsyncKeyState(key);
+    return (GetAsyncKeyState(key) & 0x8000);
 }
 
 MouseMessage* GetMouseMessage()
