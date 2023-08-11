@@ -49,6 +49,13 @@
     <ClInclude Include="inc\ui\Interface.h" />
     <ClInclude Include="inc\utils\Image.h" />
     <ClInclude Include="inc\utils\Random.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PingPongTutorial.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="PingPongTutorial.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
