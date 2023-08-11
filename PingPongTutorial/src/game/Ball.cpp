@@ -87,5 +87,5 @@ void Ball::Attach(const Rect& rect, bool isLeft)
 
 void Ball::Draw()
 {
-    PutAlphaImage((int)_pos.x, (int)_pos.y, &ballImage);
+    PutAlphaImage(static_cast<int>(_pos.x), static_cast<int>(_pos.y), &ballImage);
 }

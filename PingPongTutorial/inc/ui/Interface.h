@@ -13,16 +13,31 @@ private:
     std::wstring _name;
 
 public:
-    Interface(const std::wstring& name) : _name(name) {}
-    virtual ~Interface() {}
+    Interface(const std::wstring& name) : _name(name)
+    {
+    }
+
+    virtual ~Interface()
+    {
+    }
 
     const std::wstring& Name() const { return _name; }
 
-    virtual void OnEnter() {}
-    virtual void OnExit() {}
+    virtual void OnEnter()
+    {
+    }
 
-    virtual void Update() {}
-    virtual void Draw() {}
+    virtual void OnExit()
+    {
+    }
+
+    virtual void Update()
+    {
+    }
+
+    virtual void Draw()
+    {
+    }
 };
 
 
@@ -55,7 +70,7 @@ class GameInterface : public Interface
 {
 private:
     std::shared_ptr<Bat> _bats[2];
-    std::shared_ptr <BatController> _controllers[2];
+    std::shared_ptr<BatController> _controllers[2];
     std::shared_ptr<Ball> _ball;
 
     int _scores[2];

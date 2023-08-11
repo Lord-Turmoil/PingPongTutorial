@@ -5,13 +5,13 @@
 
 void SetRandomSeed()
 {
-    srand((unsigned)time(nullptr));
+    srand(static_cast<unsigned>(time(nullptr)));
 }
 
 // get random number in [0.0, 1.0]
 double Random()
 {
-    return (double)rand() / (double)RAND_MAX;
+    return static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
 }
 
 double Random(double upper)

@@ -62,5 +62,5 @@ double GameObject::GetHeight() const
 
 Rect GameObject::GetBorder() const
 {
-    return { _pos.x, _pos.y, _width, _height };
+    return {_pos.x, _pos.y, _width, _height};
 }

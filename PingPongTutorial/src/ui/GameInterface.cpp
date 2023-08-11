@@ -14,7 +14,9 @@ GameInterface::GameInterface() : Interface(L"Game")
     _turn = 0;
 }
 
-GameInterface::~GameInterface() {}
+GameInterface::~GameInterface()
+{
+}
 
 void GameInterface::OnEnter()
 {
@@ -54,7 +56,9 @@ void GameInterface::OnEnter()
     _started = false;
 }
 
-void GameInterface::OnExit() {}
+void GameInterface::OnExit()
+{
+}
 
 void GameInterface::Update()
 {
@@ -118,8 +122,8 @@ void GameInterface::Draw()
     LOGFONT style;
     gettextstyle(&style);
     settextstyle(22, 0, L"Consolas");
-    RECT rect0{ 0, 0, 100, 50 };
-    RECT rect1{ 900, 0, 1000, 50 };
+    RECT rect0{0, 0, 100, 50};
+    RECT rect1{900, 0, 1000, 50};
     drawtext(_controllers[0]->Name().c_str(), &rect0, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
     drawtext(_controllers[1]->Name().c_str(), &rect1, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
@@ -127,7 +131,7 @@ void GameInterface::Draw()
     wchar_t scoreText[128];
     swprintf_s(scoreText, L"%d  VS  %d", _scores[0], _scores[1]);
     settextstyle(44, 0, L"Comic Sans MS");
-    RECT scoreRect{ 0, 0, 1000, 50 };
+    RECT scoreRect{0, 0, 1000, 50};
     drawtext(scoreText, &scoreRect, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
     // restore text style

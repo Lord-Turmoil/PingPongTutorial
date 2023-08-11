@@ -35,5 +35,5 @@ void Bat::MoveDown(double deltaY)
 
 void Bat::Draw()
 {
-    PutAlphaImage((int)_pos.x, (int)_pos.y, &batImage);
+    PutAlphaImage(static_cast<int>(_pos.x), static_cast<int>(_pos.y), &batImage);
 }

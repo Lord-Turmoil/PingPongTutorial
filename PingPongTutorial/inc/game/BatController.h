@@ -22,7 +22,9 @@ public:
     {
     }
 
-    virtual ~BatController() {}
+    virtual ~BatController()
+    {
+    }
 
     const std::wstring& Name() const { return _name; }
     virtual const wchar_t* GetTips() const { return L"None"; }

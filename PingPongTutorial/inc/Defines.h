@@ -10,8 +10,13 @@ struct Vector
     double x;
     double y;
 
-    Vector() : x(0.0), y(0.0) {}
-    Vector(double _x, double _y) : x(_x), y(_y) {}
+    Vector() : x(0.0), y(0.0)
+    {
+    }
+
+    Vector(double _x, double _y) : x(_x), y(_y)
+    {
+    }
 
     bool operator==(const Vector& obj) const
     {
@@ -25,22 +30,22 @@ struct Vector
 
     Vector operator+(const Vector& obj) const
     {
-        return { x + obj.x, y + obj.y };
+        return {x + obj.x, y + obj.y};
     }
 
     Vector operator-(const Vector& obj) const
     {
-        return { x + obj.x, y + obj.y };
+        return {x + obj.x, y + obj.y};
     }
 
     Vector operator-() const
     {
-        return { -x, -y };
+        return {-x, -y};
     }
 
     friend Vector operator*(const Vector& lhs, double rhs)
     {
-        return { lhs.x * rhs, lhs.y * rhs };
+        return {lhs.x * rhs, lhs.y * rhs};
     }
 
     friend Vector operator*(double lhs, const Vector& rhs)
@@ -50,7 +55,7 @@ struct Vector
 
     friend Vector operator/(const Vector& lhs, double rhs)
     {
-        return { lhs.x / rhs, lhs.y / rhs };
+        return {lhs.x / rhs, lhs.y / rhs};
     }
 
     friend Vector operator/(double lhs, const Vector& rhs)
@@ -67,12 +72,21 @@ struct Rect
     union
     {
         Coordinate pos;
-        struct { double x; double y; };
+
+        struct
+        {
+            double x;
+            double y;
+        };
     };
+
     double width;
     double height;
 
-    Rect() : x(0.0), y(0.0), width(0.0), height(0.0) {}
+    Rect() : x(0.0), y(0.0), width(0.0), height(0.0)
+    {
+    }
+
     Rect(double _x, double _y, double _width, double _height)
         : x(_x), y(_y), width(_width), height(_height)
     {
@@ -80,7 +94,7 @@ struct Rect
 
     Coordinate GetCenter() const
     {
-        return { x + width * 0.5, y + height * 0.5 };
+        return {x + width * 0.5, y + height * 0.5};
     }
 
     Coordinate Intersect(const Rect& rect) const
@@ -112,7 +126,9 @@ struct Rect
 
     RECT ToEasyXRect() const
     {
-        return { (LONG)x, (LONG)y, (LONG)(x + width), (LONG)(y + height) };
+        return {
+            static_cast<LONG>(x), static_cast<LONG>(y), static_cast<LONG>(x + width), static_cast<LONG>(y + height)
+        };
     }
 };
 

@@ -5,7 +5,7 @@ static FMOD::Channel* sharedChannel = nullptr;
 
 void InitFmodSystem()
 {
-    FMOD::System_Create(&system);
+    System_Create(&system);
     system->init(32l, FMOD_INIT_NORMAL, nullptr);
 }
 

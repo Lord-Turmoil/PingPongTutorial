@@ -10,6 +10,7 @@ struct MouseMessage
     union
     {
         Coordinate pos;
+
         struct
         {
             double x;
@@ -20,7 +21,9 @@ struct MouseMessage
     bool isDown;
     bool isUp;
 
-    MouseMessage() {}
+    MouseMessage()
+    {
+    }
 };
 
 void PeekMouseMessage();

@@ -36,7 +36,7 @@ int APIENTRY WinMain(
 
         Sleep(15);
     }
-    
+
     return 0;
 }
 
@@ -61,7 +61,7 @@ void Init()
     // init application
     Application* app = GetApplication();
     app->RegisterInterface(new MainInterface())
-        ->RegisterInterface(new GameInterface());
+       ->RegisterInterface(new GameInterface());
 
     BeginBatchDraw();
 }

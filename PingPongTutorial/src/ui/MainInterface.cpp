@@ -7,15 +7,15 @@ MainInterface::MainInterface()
 {
     _pOnePlayerButton = new Button(Rect(350, 280, 100, 60), L"1 Player");
     _pOnePlayerButton->SetUpStyle(RED)->SetHoverStyle(YELLOW)->SetDownStyle(MAGENTA)
-        ->SetOnClick(_OnClickOnePlayerButton);
+                     ->SetOnClick(_OnClickOnePlayerButton);
 
     _pTwoPlayerButton = new Button(Rect(550, 280, 100, 60), L"2 Player");
     _pTwoPlayerButton->SetUpStyle(RED)->SetHoverStyle(YELLOW)->SetDownStyle(MAGENTA)
-        ->SetOnClick(_OnClickTwoPlayerButton);
+                     ->SetOnClick(_OnClickTwoPlayerButton);
 
     _pExitButton = new Button(Rect(900, 460, 60, 60), L"Exit");
     _pExitButton->SetUpStyle(RED)->SetHoverStyle(YELLOW)->SetDownStyle(MAGENTA)
-        ->SetOnClick(_OnClickExitButton);
+                ->SetOnClick(_OnClickExitButton);
 }
 
 MainInterface::~MainInterface()
@@ -34,7 +34,7 @@ void MainInterface::Update()
 
 void MainInterface::Draw()
 {
-    RECT rect{ 0, 0, 1000, 280 };
+    RECT rect{0, 0, 1000, 280};
 
     LOGFONT style;
     gettextstyle(&style);

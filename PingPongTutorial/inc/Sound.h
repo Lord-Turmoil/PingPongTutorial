@@ -10,7 +10,10 @@ struct FmodSound
     FMOD::Sound* snd;
     FMOD::Channel* chl;
 
-    FmodSound() : snd(nullptr), chl(nullptr) {}
+    FmodSound() : snd(nullptr), chl(nullptr)
+    {
+    }
+
     ~FmodSound()
     {
         if (snd)
