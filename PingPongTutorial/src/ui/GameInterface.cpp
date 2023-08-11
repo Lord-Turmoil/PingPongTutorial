@@ -76,12 +76,12 @@ void GameInterface::Update()
         _ball->Bounce(Rect(50, 510, 1000, 100));
         if (_ball->GetX() < 150.0)
         {
-            _scores[0] += 1;
+            _scores[1] += 1;
             newTurn = true;
         }
         else if (_ball->GetX() > 850.0)
         {
-            _scores[1] += 1;
+            _scores[0] += 1;
             newTurn = true;
         }
     }
