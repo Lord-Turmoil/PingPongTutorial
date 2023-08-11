@@ -32,6 +32,7 @@ private:
 
 public:
     Button(const Rect& range, const std::wstring& text);
+    virtual ~Button() = default;
 
     Button* SetUpStyle(COLORREF color);
     Button* SetHoverStyle(COLORREF color);
