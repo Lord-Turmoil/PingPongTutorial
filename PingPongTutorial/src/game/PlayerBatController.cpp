@@ -5,7 +5,7 @@
 #include "../../inc/Message.h"
 #include "../../inc/game/Bat.h"
 
-PlayerBatController::PlayerBatController(const std::wstring& name, Bat* bat, int downKey, int upKey, double speed)
+PlayerBatController::PlayerBatController(const std::wstring& name, Bat* bat, double speed, int downKey, int upKey)
     : BatController(name, bat, speed), _downKey(downKey), _upKey(upKey)
 {
 }

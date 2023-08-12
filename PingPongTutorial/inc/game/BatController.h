@@ -43,7 +43,7 @@ private:
     int _upKey;
 
 public:
-    PlayerBatController(const std::wstring& name, Bat* bat, int downKey, int upKey, double speed);
+    PlayerBatController(const std::wstring& name, Bat* bat, double speed, int downKey, int upKey);
 
     void Update() override;
     const wchar_t* GetTips() const override;
@@ -58,7 +58,7 @@ private:
     Ball* _ball;
 
 public:
-    AiBatController(const std::wstring& name, Bat* bat, Ball* ball, double speed);
+    AiBatController(const std::wstring& name, Bat* bat, double speed, Ball* ball);
 
     void Update() override;
     const wchar_t* GetTips() const override;

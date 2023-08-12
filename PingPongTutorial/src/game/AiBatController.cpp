@@ -5,7 +5,7 @@
 #include "../../inc/game/Ball.h"
 #include "../../inc/game/Bat.h"
 
-AiBatController::AiBatController(const std::wstring& name, Bat* bat, Ball* ball, double speed)
+AiBatController::AiBatController(const std::wstring& name, Bat* bat, double speed, Ball* ball)
     : BatController(name, bat, speed), _ball(ball)
 {
 }

@@ -37,16 +37,16 @@ void GameInterface::OnEnter()
     if (gameMode == SINGLE_PLAYER)
     {
         _controllers[0] = std::make_shared<PlayerBatController>(
-            L"Player", _bats[0].get(), VK_S, VK_W, 5.0);
+            L"Player", _bats[0].get(), 5.0, VK_S, VK_W);
         _controllers[1] = std::make_shared<AiBatController>(
-            L"AI", _bats[1].get(), _ball.get(), 3.0);
+            L"AI", _bats[1].get(), 3.0, _ball.get());
     }
     else
     {
         _controllers[0] = std::make_shared<PlayerBatController>(
-            L"Player 1", _bats[0].get(), VK_S, VK_W, 5.0);
+            L"Player 1", _bats[0].get(), 5.0, VK_S, VK_W);
         _controllers[1] = std::make_shared<PlayerBatController>(
-            L"Player 2", _bats[1].get(), VK_J, VK_I, 5.0);
+            L"Player 2", _bats[1].get(), 5.0, VK_J, VK_I);
     }
 
     // init turn and score
@@ -125,8 +125,8 @@ void GameInterface::Draw()
     LOGFONT style;
     gettextstyle(&style);
     settextstyle(22, 0, L"Consolas");
-    RECT rect0{0, 0, 100, 50};
-    RECT rect1{900, 0, 1000, 50};
+    RECT rect0{ 0, 0, 100, 50 };
+    RECT rect1{ 900, 0, 1000, 50 };
     drawtext(_controllers[0]->Name().c_str(), &rect0, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
     drawtext(_controllers[1]->Name().c_str(), &rect1, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
@@ -134,7 +134,7 @@ void GameInterface::Draw()
     wchar_t scoreText[128];
     swprintf_s(scoreText, L"%d  VS  %d", _scores[0], _scores[1]);
     settextstyle(44, 0, L"Comic Sans MS");
-    RECT scoreRect{0, 0, 1000, 50};
+    RECT scoreRect{ 0, 0, 1000, 50 };
     drawtext(scoreText, &scoreRect, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
 
     // restore text style
