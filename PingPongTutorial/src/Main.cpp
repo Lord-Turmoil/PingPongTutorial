@@ -9,6 +9,7 @@
 #include "../inc/ui/Interface.h"
 #include "../inc/utils/Image.h"
 #include "../inc/Sound.h"
+#include "../inc/utils/Random.h"
 
 void Init();
 void ClearUp();
@@ -46,6 +47,8 @@ int APIENTRY WinMain(
 
 void Init()
 {
+    SetRandomSeed();
+
     // init graph
     initgraph(1000, 560);
     setbkcolor(WHITE);
