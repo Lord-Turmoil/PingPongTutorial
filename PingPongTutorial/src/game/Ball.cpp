@@ -25,7 +25,7 @@ void Ball::Serve(double direction)
 
 void Ball::Stop()
 {
-    _velocity.x = _velocity.y = 0;
+    _velocity.x = _velocity.y = 0.0;
 }
 
 void Ball::Move()
