@@ -42,6 +42,8 @@ int APIENTRY WinMain(
         Sleep(15);
     }
 
+    ClearUp();
+
     return 0;
 }
 
